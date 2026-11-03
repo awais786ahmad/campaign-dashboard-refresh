@@ -10,33 +10,597 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardRouteImport } from './routes/_dashboard'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FeaturesRouteImport } from './routes/features'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as DashboardCampaignsRouteImport } from './routes/_dashboard.campaigns'
+import { Route as DashboardDashboardRouteImport } from './routes/_dashboard.dashboard'
+import { Route as DashboardInboxRouteImport } from './routes/_dashboard.inbox'
+import { Route as DashboardReportsRouteImport } from './routes/_dashboard.reports'
+import { Route as AuthForgotPasswordRouteImport } from './routes/auth.forgot-password'
+import { Route as AuthLoginRouteImport } from './routes/auth.login'
+import { Route as AuthResetPasswordRouteImport } from './routes/auth.reset-password'
+import { Route as AuthSignupRouteImport } from './routes/auth.signup'
+import { Route as AuthVerifyEmailRouteImport } from './routes/auth.verify-email'
+import { Route as OnboardingLeadsRouteImport } from './routes/onboarding.leads'
+import { Route as OnboardingPhoneRouteImport } from './routes/onboarding.phone'
+import { Route as OnboardingReadyRouteImport } from './routes/onboarding.ready'
+import { Route as OnboardingWorkspaceRouteImport } from './routes/onboarding.workspace'
+import { Route as DashboardCallingDialerRouteImport } from './routes/_dashboard.calling.dialer'
+import { Route as DashboardCallingHistoryRouteImport } from './routes/_dashboard.calling.history'
+import { Route as DashboardCallingLiveRouteImport } from './routes/_dashboard.calling.live'
+import { Route as DashboardCrmDataTableRouteImport } from './routes/_dashboard.crm.data-table'
+import { Route as DashboardCrmLeadsRouteImport } from './routes/_dashboard.crm.leads'
+import { Route as DashboardCrmScriptsRouteImport } from './routes/_dashboard.crm.scripts'
+import { Route as DashboardCrmSegmentsRouteImport } from './routes/_dashboard.crm.segments'
+import { Route as DashboardCrmTagsRouteImport } from './routes/_dashboard.crm.tags'
+import { Route as DashboardCrmTasksRouteImport } from './routes/_dashboard.crm.tasks'
+import { Route as DashboardCrmTemplatesRouteImport } from './routes/_dashboard.crm.templates'
+import { Route as DashboardOrganizationActivityLogRouteImport } from './routes/_dashboard.organization.activity-log'
+import { Route as DashboardOrganizationAiAgentsRouteImport } from './routes/_dashboard.organization.ai-agents'
+import { Route as DashboardOrganizationMembersRouteImport } from './routes/_dashboard.organization.members'
+import { Route as DashboardOrganizationRolesRouteImport } from './routes/_dashboard.organization.roles'
+import { Route as DashboardOrganizationTeamsRouteImport } from './routes/_dashboard.organization.teams'
+import { Route as DashboardOrganizationWorkspaceRouteImport } from './routes/_dashboard.organization.workspace'
+import { Route as DashboardReportsIndexRouteImport } from './routes/_dashboard.reports.index'
+import { Route as DashboardReportsCallsRouteImport } from './routes/_dashboard.reports.calls'
+import { Route as DashboardReportsCampaignsRouteImport } from './routes/_dashboard.reports.campaigns'
+import { Route as DashboardReportsLibraryRouteImport } from './routes/_dashboard.reports.library'
+import { Route as DashboardReportsPerformanceRouteImport } from './routes/_dashboard.reports.performance'
+import { Route as DashboardReportsQualityRouteImport } from './routes/_dashboard.reports.quality'
+import { Route as DashboardSettingsAutomationsRouteImport } from './routes/_dashboard.settings.automations'
+import { Route as DashboardSettingsCallingRouteImport } from './routes/_dashboard.settings.calling'
+import { Route as DashboardSettingsKnowledgeBaseRouteImport } from './routes/_dashboard.settings.knowledge-base'
+import { Route as DashboardSettingsProfileRouteImport } from './routes/_dashboard.settings.profile'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/_dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRoute = FeaturesRouteImport.update({
+  id: '/features',
+  path: '/features',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardCampaignsRoute = DashboardCampaignsRouteImport.update({
+  id: '/campaigns',
+  path: '/campaigns',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDashboardRoute = DashboardDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardInboxRoute = DashboardInboxRouteImport.update({
+  id: '/inbox',
+  path: '/inbox',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardReportsRoute = DashboardReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
+  id: '/auth/forgot-password',
+  path: '/auth/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/auth/login',
+  path: '/auth/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
+  id: '/auth/reset-password',
+  path: '/auth/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthSignupRoute = AuthSignupRouteImport.update({
+  id: '/auth/signup',
+  path: '/auth/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthVerifyEmailRoute = AuthVerifyEmailRouteImport.update({
+  id: '/auth/verify-email',
+  path: '/auth/verify-email',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingLeadsRoute = OnboardingLeadsRouteImport.update({
+  id: '/onboarding/leads',
+  path: '/onboarding/leads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingPhoneRoute = OnboardingPhoneRouteImport.update({
+  id: '/onboarding/phone',
+  path: '/onboarding/phone',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingReadyRoute = OnboardingReadyRouteImport.update({
+  id: '/onboarding/ready',
+  path: '/onboarding/ready',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingWorkspaceRoute = OnboardingWorkspaceRouteImport.update({
+  id: '/onboarding/workspace',
+  path: '/onboarding/workspace',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardCallingDialerRoute = DashboardCallingDialerRouteImport.update({
+  id: '/calling/dialer',
+  path: '/calling/dialer',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCallingHistoryRoute = DashboardCallingHistoryRouteImport.update({
+  id: '/calling/history',
+  path: '/calling/history',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCallingLiveRoute = DashboardCallingLiveRouteImport.update({
+  id: '/calling/live',
+  path: '/calling/live',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCrmDataTableRoute = DashboardCrmDataTableRouteImport.update({
+  id: '/crm/data-table',
+  path: '/crm/data-table',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCrmLeadsRoute = DashboardCrmLeadsRouteImport.update({
+  id: '/crm/leads',
+  path: '/crm/leads',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCrmScriptsRoute = DashboardCrmScriptsRouteImport.update({
+  id: '/crm/scripts',
+  path: '/crm/scripts',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCrmSegmentsRoute = DashboardCrmSegmentsRouteImport.update({
+  id: '/crm/segments',
+  path: '/crm/segments',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCrmTagsRoute = DashboardCrmTagsRouteImport.update({
+  id: '/crm/tags',
+  path: '/crm/tags',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCrmTasksRoute = DashboardCrmTasksRouteImport.update({
+  id: '/crm/tasks',
+  path: '/crm/tasks',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCrmTemplatesRoute = DashboardCrmTemplatesRouteImport.update({
+  id: '/crm/templates',
+  path: '/crm/templates',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardOrganizationActivityLogRoute =
+  DashboardOrganizationActivityLogRouteImport.update({
+    id: '/organization/activity-log',
+    path: '/organization/activity-log',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardOrganizationAiAgentsRoute =
+  DashboardOrganizationAiAgentsRouteImport.update({
+    id: '/organization/ai-agents',
+    path: '/organization/ai-agents',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardOrganizationMembersRoute =
+  DashboardOrganizationMembersRouteImport.update({
+    id: '/organization/members',
+    path: '/organization/members',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardOrganizationRolesRoute =
+  DashboardOrganizationRolesRouteImport.update({
+    id: '/organization/roles',
+    path: '/organization/roles',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardOrganizationTeamsRoute =
+  DashboardOrganizationTeamsRouteImport.update({
+    id: '/organization/teams',
+    path: '/organization/teams',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardOrganizationWorkspaceRoute =
+  DashboardOrganizationWorkspaceRouteImport.update({
+    id: '/organization/workspace',
+    path: '/organization/workspace',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardReportsIndexRoute = DashboardReportsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardReportsRoute,
+} as any)
+const DashboardReportsCallsRoute = DashboardReportsCallsRouteImport.update({
+  id: '/calls',
+  path: '/calls',
+  getParentRoute: () => DashboardReportsRoute,
+} as any)
+const DashboardReportsCampaignsRoute =
+  DashboardReportsCampaignsRouteImport.update({
+    id: '/campaigns',
+    path: '/campaigns',
+    getParentRoute: () => DashboardReportsRoute,
+  } as any)
+const DashboardReportsLibraryRoute = DashboardReportsLibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
+  getParentRoute: () => DashboardReportsRoute,
+} as any)
+const DashboardReportsPerformanceRoute =
+  DashboardReportsPerformanceRouteImport.update({
+    id: '/performance',
+    path: '/performance',
+    getParentRoute: () => DashboardReportsRoute,
+  } as any)
+const DashboardReportsQualityRoute = DashboardReportsQualityRouteImport.update({
+  id: '/quality',
+  path: '/quality',
+  getParentRoute: () => DashboardReportsRoute,
+} as any)
+const DashboardSettingsAutomationsRoute =
+  DashboardSettingsAutomationsRouteImport.update({
+    id: '/settings/automations',
+    path: '/settings/automations',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardSettingsCallingRoute =
+  DashboardSettingsCallingRouteImport.update({
+    id: '/settings/calling',
+    path: '/settings/calling',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardSettingsKnowledgeBaseRoute =
+  DashboardSettingsKnowledgeBaseRouteImport.update({
+    id: '/settings/knowledge-base',
+    path: '/settings/knowledge-base',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardSettingsProfileRoute =
+  DashboardSettingsProfileRouteImport.update({
+    id: '/settings/profile',
+    path: '/settings/profile',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/features': typeof FeaturesRoute
+  '/pricing': typeof PricingRoute
+  '/resources': typeof ResourcesRoute
+  '/campaigns': typeof DashboardCampaignsRoute
+  '/dashboard': typeof DashboardDashboardRoute
+  '/inbox': typeof DashboardInboxRoute
+  '/reports': typeof DashboardReportsRouteWithChildren
+  '/auth/forgot-password': typeof AuthForgotPasswordRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/auth/signup': typeof AuthSignupRoute
+  '/auth/verify-email': typeof AuthVerifyEmailRoute
+  '/onboarding/leads': typeof OnboardingLeadsRoute
+  '/onboarding/phone': typeof OnboardingPhoneRoute
+  '/onboarding/ready': typeof OnboardingReadyRoute
+  '/onboarding/workspace': typeof OnboardingWorkspaceRoute
+  '/calling/dialer': typeof DashboardCallingDialerRoute
+  '/calling/history': typeof DashboardCallingHistoryRoute
+  '/calling/live': typeof DashboardCallingLiveRoute
+  '/crm/data-table': typeof DashboardCrmDataTableRoute
+  '/crm/leads': typeof DashboardCrmLeadsRoute
+  '/crm/scripts': typeof DashboardCrmScriptsRoute
+  '/crm/segments': typeof DashboardCrmSegmentsRoute
+  '/crm/tags': typeof DashboardCrmTagsRoute
+  '/crm/tasks': typeof DashboardCrmTasksRoute
+  '/crm/templates': typeof DashboardCrmTemplatesRoute
+  '/organization/activity-log': typeof DashboardOrganizationActivityLogRoute
+  '/organization/ai-agents': typeof DashboardOrganizationAiAgentsRoute
+  '/organization/members': typeof DashboardOrganizationMembersRoute
+  '/organization/roles': typeof DashboardOrganizationRolesRoute
+  '/organization/teams': typeof DashboardOrganizationTeamsRoute
+  '/organization/workspace': typeof DashboardOrganizationWorkspaceRoute
+  '/reports/calls': typeof DashboardReportsCallsRoute
+  '/reports/campaigns': typeof DashboardReportsCampaignsRoute
+  '/reports/library': typeof DashboardReportsLibraryRoute
+  '/reports/performance': typeof DashboardReportsPerformanceRoute
+  '/reports/quality': typeof DashboardReportsQualityRoute
+  '/settings/automations': typeof DashboardSettingsAutomationsRoute
+  '/settings/calling': typeof DashboardSettingsCallingRoute
+  '/settings/knowledge-base': typeof DashboardSettingsKnowledgeBaseRoute
+  '/settings/profile': typeof DashboardSettingsProfileRoute
+  '/reports/': typeof DashboardReportsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/features': typeof FeaturesRoute
+  '/pricing': typeof PricingRoute
+  '/resources': typeof ResourcesRoute
+  '/campaigns': typeof DashboardCampaignsRoute
+  '/dashboard': typeof DashboardDashboardRoute
+  '/inbox': typeof DashboardInboxRoute
+  '/auth/forgot-password': typeof AuthForgotPasswordRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/auth/signup': typeof AuthSignupRoute
+  '/auth/verify-email': typeof AuthVerifyEmailRoute
+  '/onboarding/leads': typeof OnboardingLeadsRoute
+  '/onboarding/phone': typeof OnboardingPhoneRoute
+  '/onboarding/ready': typeof OnboardingReadyRoute
+  '/onboarding/workspace': typeof OnboardingWorkspaceRoute
+  '/calling/dialer': typeof DashboardCallingDialerRoute
+  '/calling/history': typeof DashboardCallingHistoryRoute
+  '/calling/live': typeof DashboardCallingLiveRoute
+  '/crm/data-table': typeof DashboardCrmDataTableRoute
+  '/crm/leads': typeof DashboardCrmLeadsRoute
+  '/crm/scripts': typeof DashboardCrmScriptsRoute
+  '/crm/segments': typeof DashboardCrmSegmentsRoute
+  '/crm/tags': typeof DashboardCrmTagsRoute
+  '/crm/tasks': typeof DashboardCrmTasksRoute
+  '/crm/templates': typeof DashboardCrmTemplatesRoute
+  '/organization/activity-log': typeof DashboardOrganizationActivityLogRoute
+  '/organization/ai-agents': typeof DashboardOrganizationAiAgentsRoute
+  '/organization/members': typeof DashboardOrganizationMembersRoute
+  '/organization/roles': typeof DashboardOrganizationRolesRoute
+  '/organization/teams': typeof DashboardOrganizationTeamsRoute
+  '/organization/workspace': typeof DashboardOrganizationWorkspaceRoute
+  '/reports/calls': typeof DashboardReportsCallsRoute
+  '/reports/campaigns': typeof DashboardReportsCampaignsRoute
+  '/reports/library': typeof DashboardReportsLibraryRoute
+  '/reports/performance': typeof DashboardReportsPerformanceRoute
+  '/reports/quality': typeof DashboardReportsQualityRoute
+  '/settings/automations': typeof DashboardSettingsAutomationsRoute
+  '/settings/calling': typeof DashboardSettingsCallingRoute
+  '/settings/knowledge-base': typeof DashboardSettingsKnowledgeBaseRoute
+  '/settings/profile': typeof DashboardSettingsProfileRoute
+  '/reports': typeof DashboardReportsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_dashboard': typeof DashboardRouteWithChildren
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/features': typeof FeaturesRoute
+  '/pricing': typeof PricingRoute
+  '/resources': typeof ResourcesRoute
+  '/_dashboard/campaigns': typeof DashboardCampaignsRoute
+  '/_dashboard/dashboard': typeof DashboardDashboardRoute
+  '/_dashboard/inbox': typeof DashboardInboxRoute
+  '/_dashboard/reports': typeof DashboardReportsRouteWithChildren
+  '/auth/forgot-password': typeof AuthForgotPasswordRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/auth/signup': typeof AuthSignupRoute
+  '/auth/verify-email': typeof AuthVerifyEmailRoute
+  '/onboarding/leads': typeof OnboardingLeadsRoute
+  '/onboarding/phone': typeof OnboardingPhoneRoute
+  '/onboarding/ready': typeof OnboardingReadyRoute
+  '/onboarding/workspace': typeof OnboardingWorkspaceRoute
+  '/_dashboard/calling/dialer': typeof DashboardCallingDialerRoute
+  '/_dashboard/calling/history': typeof DashboardCallingHistoryRoute
+  '/_dashboard/calling/live': typeof DashboardCallingLiveRoute
+  '/_dashboard/crm/data-table': typeof DashboardCrmDataTableRoute
+  '/_dashboard/crm/leads': typeof DashboardCrmLeadsRoute
+  '/_dashboard/crm/scripts': typeof DashboardCrmScriptsRoute
+  '/_dashboard/crm/segments': typeof DashboardCrmSegmentsRoute
+  '/_dashboard/crm/tags': typeof DashboardCrmTagsRoute
+  '/_dashboard/crm/tasks': typeof DashboardCrmTasksRoute
+  '/_dashboard/crm/templates': typeof DashboardCrmTemplatesRoute
+  '/_dashboard/organization/activity-log': typeof DashboardOrganizationActivityLogRoute
+  '/_dashboard/organization/ai-agents': typeof DashboardOrganizationAiAgentsRoute
+  '/_dashboard/organization/members': typeof DashboardOrganizationMembersRoute
+  '/_dashboard/organization/roles': typeof DashboardOrganizationRolesRoute
+  '/_dashboard/organization/teams': typeof DashboardOrganizationTeamsRoute
+  '/_dashboard/organization/workspace': typeof DashboardOrganizationWorkspaceRoute
+  '/_dashboard/reports/calls': typeof DashboardReportsCallsRoute
+  '/_dashboard/reports/campaigns': typeof DashboardReportsCampaignsRoute
+  '/_dashboard/reports/library': typeof DashboardReportsLibraryRoute
+  '/_dashboard/reports/performance': typeof DashboardReportsPerformanceRoute
+  '/_dashboard/reports/quality': typeof DashboardReportsQualityRoute
+  '/_dashboard/settings/automations': typeof DashboardSettingsAutomationsRoute
+  '/_dashboard/settings/calling': typeof DashboardSettingsCallingRoute
+  '/_dashboard/settings/knowledge-base': typeof DashboardSettingsKnowledgeBaseRoute
+  '/_dashboard/settings/profile': typeof DashboardSettingsProfileRoute
+  '/_dashboard/reports/': typeof DashboardReportsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/features'
+    | '/pricing'
+    | '/resources'
+    | '/campaigns'
+    | '/dashboard'
+    | '/inbox'
+    | '/reports'
+    | '/auth/forgot-password'
+    | '/auth/login'
+    | '/auth/reset-password'
+    | '/auth/signup'
+    | '/auth/verify-email'
+    | '/onboarding/leads'
+    | '/onboarding/phone'
+    | '/onboarding/ready'
+    | '/onboarding/workspace'
+    | '/calling/dialer'
+    | '/calling/history'
+    | '/calling/live'
+    | '/crm/data-table'
+    | '/crm/leads'
+    | '/crm/scripts'
+    | '/crm/segments'
+    | '/crm/tags'
+    | '/crm/tasks'
+    | '/crm/templates'
+    | '/organization/activity-log'
+    | '/organization/ai-agents'
+    | '/organization/members'
+    | '/organization/roles'
+    | '/organization/teams'
+    | '/organization/workspace'
+    | '/reports/calls'
+    | '/reports/campaigns'
+    | '/reports/library'
+    | '/reports/performance'
+    | '/reports/quality'
+    | '/settings/automations'
+    | '/settings/calling'
+    | '/settings/knowledge-base'
+    | '/settings/profile'
+    | '/reports/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/features'
+    | '/pricing'
+    | '/resources'
+    | '/campaigns'
+    | '/dashboard'
+    | '/inbox'
+    | '/auth/forgot-password'
+    | '/auth/login'
+    | '/auth/reset-password'
+    | '/auth/signup'
+    | '/auth/verify-email'
+    | '/onboarding/leads'
+    | '/onboarding/phone'
+    | '/onboarding/ready'
+    | '/onboarding/workspace'
+    | '/calling/dialer'
+    | '/calling/history'
+    | '/calling/live'
+    | '/crm/data-table'
+    | '/crm/leads'
+    | '/crm/scripts'
+    | '/crm/segments'
+    | '/crm/tags'
+    | '/crm/tasks'
+    | '/crm/templates'
+    | '/organization/activity-log'
+    | '/organization/ai-agents'
+    | '/organization/members'
+    | '/organization/roles'
+    | '/organization/teams'
+    | '/organization/workspace'
+    | '/reports/calls'
+    | '/reports/campaigns'
+    | '/reports/library'
+    | '/reports/performance'
+    | '/reports/quality'
+    | '/settings/automations'
+    | '/settings/calling'
+    | '/settings/knowledge-base'
+    | '/settings/profile'
+    | '/reports'
+  id:
+    | '__root__'
+    | '/'
+    | '/_dashboard'
+    | '/about'
+    | '/contact'
+    | '/features'
+    | '/pricing'
+    | '/resources'
+    | '/_dashboard/campaigns'
+    | '/_dashboard/dashboard'
+    | '/_dashboard/inbox'
+    | '/_dashboard/reports'
+    | '/auth/forgot-password'
+    | '/auth/login'
+    | '/auth/reset-password'
+    | '/auth/signup'
+    | '/auth/verify-email'
+    | '/onboarding/leads'
+    | '/onboarding/phone'
+    | '/onboarding/ready'
+    | '/onboarding/workspace'
+    | '/_dashboard/calling/dialer'
+    | '/_dashboard/calling/history'
+    | '/_dashboard/calling/live'
+    | '/_dashboard/crm/data-table'
+    | '/_dashboard/crm/leads'
+    | '/_dashboard/crm/scripts'
+    | '/_dashboard/crm/segments'
+    | '/_dashboard/crm/tags'
+    | '/_dashboard/crm/tasks'
+    | '/_dashboard/crm/templates'
+    | '/_dashboard/organization/activity-log'
+    | '/_dashboard/organization/ai-agents'
+    | '/_dashboard/organization/members'
+    | '/_dashboard/organization/roles'
+    | '/_dashboard/organization/teams'
+    | '/_dashboard/organization/workspace'
+    | '/_dashboard/reports/calls'
+    | '/_dashboard/reports/campaigns'
+    | '/_dashboard/reports/library'
+    | '/_dashboard/reports/performance'
+    | '/_dashboard/reports/quality'
+    | '/_dashboard/settings/automations'
+    | '/_dashboard/settings/calling'
+    | '/_dashboard/settings/knowledge-base'
+    | '/_dashboard/settings/profile'
+    | '/_dashboard/reports/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DashboardRoute: typeof DashboardRouteWithChildren
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  FeaturesRoute: typeof FeaturesRoute
+  PricingRoute: typeof PricingRoute
+  ResourcesRoute: typeof ResourcesRoute
+  AuthForgotPasswordRoute: typeof AuthForgotPasswordRoute
+  AuthLoginRoute: typeof AuthLoginRoute
+  AuthResetPasswordRoute: typeof AuthResetPasswordRoute
+  AuthSignupRoute: typeof AuthSignupRoute
+  AuthVerifyEmailRoute: typeof AuthVerifyEmailRoute
+  OnboardingLeadsRoute: typeof OnboardingLeadsRoute
+  OnboardingPhoneRoute: typeof OnboardingPhoneRoute
+  OnboardingReadyRoute: typeof OnboardingReadyRoute
+  OnboardingWorkspaceRoute: typeof OnboardingWorkspaceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +612,420 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_dashboard': {
+      id: '/_dashboard'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features': {
+      id: '/features'
+      path: '/features'
+      fullPath: '/features'
+      preLoaderRoute: typeof FeaturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_dashboard/campaigns': {
+      id: '/_dashboard/campaigns'
+      path: '/campaigns'
+      fullPath: '/campaigns'
+      preLoaderRoute: typeof DashboardCampaignsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard': {
+      id: '/_dashboard/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardDashboardRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/inbox': {
+      id: '/_dashboard/inbox'
+      path: '/inbox'
+      fullPath: '/inbox'
+      preLoaderRoute: typeof DashboardInboxRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/reports': {
+      id: '/_dashboard/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof DashboardReportsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/auth/forgot-password': {
+      id: '/auth/forgot-password'
+      path: '/auth/forgot-password'
+      fullPath: '/auth/forgot-password'
+      preLoaderRoute: typeof AuthForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/login': {
+      id: '/auth/login'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/reset-password': {
+      id: '/auth/reset-password'
+      path: '/auth/reset-password'
+      fullPath: '/auth/reset-password'
+      preLoaderRoute: typeof AuthResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/signup': {
+      id: '/auth/signup'
+      path: '/auth/signup'
+      fullPath: '/auth/signup'
+      preLoaderRoute: typeof AuthSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/verify-email': {
+      id: '/auth/verify-email'
+      path: '/auth/verify-email'
+      fullPath: '/auth/verify-email'
+      preLoaderRoute: typeof AuthVerifyEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/leads': {
+      id: '/onboarding/leads'
+      path: '/onboarding/leads'
+      fullPath: '/onboarding/leads'
+      preLoaderRoute: typeof OnboardingLeadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/phone': {
+      id: '/onboarding/phone'
+      path: '/onboarding/phone'
+      fullPath: '/onboarding/phone'
+      preLoaderRoute: typeof OnboardingPhoneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/ready': {
+      id: '/onboarding/ready'
+      path: '/onboarding/ready'
+      fullPath: '/onboarding/ready'
+      preLoaderRoute: typeof OnboardingReadyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/workspace': {
+      id: '/onboarding/workspace'
+      path: '/onboarding/workspace'
+      fullPath: '/onboarding/workspace'
+      preLoaderRoute: typeof OnboardingWorkspaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_dashboard/calling/dialer': {
+      id: '/_dashboard/calling/dialer'
+      path: '/calling/dialer'
+      fullPath: '/calling/dialer'
+      preLoaderRoute: typeof DashboardCallingDialerRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/calling/history': {
+      id: '/_dashboard/calling/history'
+      path: '/calling/history'
+      fullPath: '/calling/history'
+      preLoaderRoute: typeof DashboardCallingHistoryRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/calling/live': {
+      id: '/_dashboard/calling/live'
+      path: '/calling/live'
+      fullPath: '/calling/live'
+      preLoaderRoute: typeof DashboardCallingLiveRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/crm/data-table': {
+      id: '/_dashboard/crm/data-table'
+      path: '/crm/data-table'
+      fullPath: '/crm/data-table'
+      preLoaderRoute: typeof DashboardCrmDataTableRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/crm/leads': {
+      id: '/_dashboard/crm/leads'
+      path: '/crm/leads'
+      fullPath: '/crm/leads'
+      preLoaderRoute: typeof DashboardCrmLeadsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/crm/scripts': {
+      id: '/_dashboard/crm/scripts'
+      path: '/crm/scripts'
+      fullPath: '/crm/scripts'
+      preLoaderRoute: typeof DashboardCrmScriptsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/crm/segments': {
+      id: '/_dashboard/crm/segments'
+      path: '/crm/segments'
+      fullPath: '/crm/segments'
+      preLoaderRoute: typeof DashboardCrmSegmentsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/crm/tags': {
+      id: '/_dashboard/crm/tags'
+      path: '/crm/tags'
+      fullPath: '/crm/tags'
+      preLoaderRoute: typeof DashboardCrmTagsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/crm/tasks': {
+      id: '/_dashboard/crm/tasks'
+      path: '/crm/tasks'
+      fullPath: '/crm/tasks'
+      preLoaderRoute: typeof DashboardCrmTasksRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/crm/templates': {
+      id: '/_dashboard/crm/templates'
+      path: '/crm/templates'
+      fullPath: '/crm/templates'
+      preLoaderRoute: typeof DashboardCrmTemplatesRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/organization/activity-log': {
+      id: '/_dashboard/organization/activity-log'
+      path: '/organization/activity-log'
+      fullPath: '/organization/activity-log'
+      preLoaderRoute: typeof DashboardOrganizationActivityLogRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/organization/ai-agents': {
+      id: '/_dashboard/organization/ai-agents'
+      path: '/organization/ai-agents'
+      fullPath: '/organization/ai-agents'
+      preLoaderRoute: typeof DashboardOrganizationAiAgentsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/organization/members': {
+      id: '/_dashboard/organization/members'
+      path: '/organization/members'
+      fullPath: '/organization/members'
+      preLoaderRoute: typeof DashboardOrganizationMembersRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/organization/roles': {
+      id: '/_dashboard/organization/roles'
+      path: '/organization/roles'
+      fullPath: '/organization/roles'
+      preLoaderRoute: typeof DashboardOrganizationRolesRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/organization/teams': {
+      id: '/_dashboard/organization/teams'
+      path: '/organization/teams'
+      fullPath: '/organization/teams'
+      preLoaderRoute: typeof DashboardOrganizationTeamsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/organization/workspace': {
+      id: '/_dashboard/organization/workspace'
+      path: '/organization/workspace'
+      fullPath: '/organization/workspace'
+      preLoaderRoute: typeof DashboardOrganizationWorkspaceRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/reports/': {
+      id: '/_dashboard/reports/'
+      path: '/'
+      fullPath: '/reports/'
+      preLoaderRoute: typeof DashboardReportsIndexRouteImport
+      parentRoute: typeof DashboardReportsRoute
+    }
+    '/_dashboard/reports/calls': {
+      id: '/_dashboard/reports/calls'
+      path: '/calls'
+      fullPath: '/reports/calls'
+      preLoaderRoute: typeof DashboardReportsCallsRouteImport
+      parentRoute: typeof DashboardReportsRoute
+    }
+    '/_dashboard/reports/campaigns': {
+      id: '/_dashboard/reports/campaigns'
+      path: '/campaigns'
+      fullPath: '/reports/campaigns'
+      preLoaderRoute: typeof DashboardReportsCampaignsRouteImport
+      parentRoute: typeof DashboardReportsRoute
+    }
+    '/_dashboard/reports/library': {
+      id: '/_dashboard/reports/library'
+      path: '/library'
+      fullPath: '/reports/library'
+      preLoaderRoute: typeof DashboardReportsLibraryRouteImport
+      parentRoute: typeof DashboardReportsRoute
+    }
+    '/_dashboard/reports/performance': {
+      id: '/_dashboard/reports/performance'
+      path: '/performance'
+      fullPath: '/reports/performance'
+      preLoaderRoute: typeof DashboardReportsPerformanceRouteImport
+      parentRoute: typeof DashboardReportsRoute
+    }
+    '/_dashboard/reports/quality': {
+      id: '/_dashboard/reports/quality'
+      path: '/quality'
+      fullPath: '/reports/quality'
+      preLoaderRoute: typeof DashboardReportsQualityRouteImport
+      parentRoute: typeof DashboardReportsRoute
+    }
+    '/_dashboard/settings/automations': {
+      id: '/_dashboard/settings/automations'
+      path: '/settings/automations'
+      fullPath: '/settings/automations'
+      preLoaderRoute: typeof DashboardSettingsAutomationsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/settings/calling': {
+      id: '/_dashboard/settings/calling'
+      path: '/settings/calling'
+      fullPath: '/settings/calling'
+      preLoaderRoute: typeof DashboardSettingsCallingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/settings/knowledge-base': {
+      id: '/_dashboard/settings/knowledge-base'
+      path: '/settings/knowledge-base'
+      fullPath: '/settings/knowledge-base'
+      preLoaderRoute: typeof DashboardSettingsKnowledgeBaseRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/settings/profile': {
+      id: '/_dashboard/settings/profile'
+      path: '/settings/profile'
+      fullPath: '/settings/profile'
+      preLoaderRoute: typeof DashboardSettingsProfileRouteImport
+      parentRoute: typeof DashboardRoute
+    }
   }
 }
 
+interface DashboardReportsRouteChildren {
+  DashboardReportsCallsRoute: typeof DashboardReportsCallsRoute
+  DashboardReportsCampaignsRoute: typeof DashboardReportsCampaignsRoute
+  DashboardReportsLibraryRoute: typeof DashboardReportsLibraryRoute
+  DashboardReportsPerformanceRoute: typeof DashboardReportsPerformanceRoute
+  DashboardReportsQualityRoute: typeof DashboardReportsQualityRoute
+  DashboardReportsIndexRoute: typeof DashboardReportsIndexRoute
+}
+
+const DashboardReportsRouteChildren: DashboardReportsRouteChildren = {
+  DashboardReportsCallsRoute: DashboardReportsCallsRoute,
+  DashboardReportsCampaignsRoute: DashboardReportsCampaignsRoute,
+  DashboardReportsLibraryRoute: DashboardReportsLibraryRoute,
+  DashboardReportsPerformanceRoute: DashboardReportsPerformanceRoute,
+  DashboardReportsQualityRoute: DashboardReportsQualityRoute,
+  DashboardReportsIndexRoute: DashboardReportsIndexRoute,
+}
+
+const DashboardReportsRouteWithChildren =
+  DashboardReportsRoute._addFileChildren(DashboardReportsRouteChildren)
+
+interface DashboardRouteChildren {
+  DashboardCampaignsRoute: typeof DashboardCampaignsRoute
+  DashboardDashboardRoute: typeof DashboardDashboardRoute
+  DashboardInboxRoute: typeof DashboardInboxRoute
+  DashboardReportsRoute: typeof DashboardReportsRouteWithChildren
+  DashboardCallingDialerRoute: typeof DashboardCallingDialerRoute
+  DashboardCallingHistoryRoute: typeof DashboardCallingHistoryRoute
+  DashboardCallingLiveRoute: typeof DashboardCallingLiveRoute
+  DashboardCrmDataTableRoute: typeof DashboardCrmDataTableRoute
+  DashboardCrmLeadsRoute: typeof DashboardCrmLeadsRoute
+  DashboardCrmScriptsRoute: typeof DashboardCrmScriptsRoute
+  DashboardCrmSegmentsRoute: typeof DashboardCrmSegmentsRoute
+  DashboardCrmTagsRoute: typeof DashboardCrmTagsRoute
+  DashboardCrmTasksRoute: typeof DashboardCrmTasksRoute
+  DashboardCrmTemplatesRoute: typeof DashboardCrmTemplatesRoute
+  DashboardOrganizationActivityLogRoute: typeof DashboardOrganizationActivityLogRoute
+  DashboardOrganizationAiAgentsRoute: typeof DashboardOrganizationAiAgentsRoute
+  DashboardOrganizationMembersRoute: typeof DashboardOrganizationMembersRoute
+  DashboardOrganizationRolesRoute: typeof DashboardOrganizationRolesRoute
+  DashboardOrganizationTeamsRoute: typeof DashboardOrganizationTeamsRoute
+  DashboardOrganizationWorkspaceRoute: typeof DashboardOrganizationWorkspaceRoute
+  DashboardSettingsAutomationsRoute: typeof DashboardSettingsAutomationsRoute
+  DashboardSettingsCallingRoute: typeof DashboardSettingsCallingRoute
+  DashboardSettingsKnowledgeBaseRoute: typeof DashboardSettingsKnowledgeBaseRoute
+  DashboardSettingsProfileRoute: typeof DashboardSettingsProfileRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardCampaignsRoute: DashboardCampaignsRoute,
+  DashboardDashboardRoute: DashboardDashboardRoute,
+  DashboardInboxRoute: DashboardInboxRoute,
+  DashboardReportsRoute: DashboardReportsRouteWithChildren,
+  DashboardCallingDialerRoute: DashboardCallingDialerRoute,
+  DashboardCallingHistoryRoute: DashboardCallingHistoryRoute,
+  DashboardCallingLiveRoute: DashboardCallingLiveRoute,
+  DashboardCrmDataTableRoute: DashboardCrmDataTableRoute,
+  DashboardCrmLeadsRoute: DashboardCrmLeadsRoute,
+  DashboardCrmScriptsRoute: DashboardCrmScriptsRoute,
+  DashboardCrmSegmentsRoute: DashboardCrmSegmentsRoute,
+  DashboardCrmTagsRoute: DashboardCrmTagsRoute,
+  DashboardCrmTasksRoute: DashboardCrmTasksRoute,
+  DashboardCrmTemplatesRoute: DashboardCrmTemplatesRoute,
+  DashboardOrganizationActivityLogRoute: DashboardOrganizationActivityLogRoute,
+  DashboardOrganizationAiAgentsRoute: DashboardOrganizationAiAgentsRoute,
+  DashboardOrganizationMembersRoute: DashboardOrganizationMembersRoute,
+  DashboardOrganizationRolesRoute: DashboardOrganizationRolesRoute,
+  DashboardOrganizationTeamsRoute: DashboardOrganizationTeamsRoute,
+  DashboardOrganizationWorkspaceRoute: DashboardOrganizationWorkspaceRoute,
+  DashboardSettingsAutomationsRoute: DashboardSettingsAutomationsRoute,
+  DashboardSettingsCallingRoute: DashboardSettingsCallingRoute,
+  DashboardSettingsKnowledgeBaseRoute: DashboardSettingsKnowledgeBaseRoute,
+  DashboardSettingsProfileRoute: DashboardSettingsProfileRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DashboardRoute: DashboardRouteWithChildren,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  FeaturesRoute: FeaturesRoute,
+  PricingRoute: PricingRoute,
+  ResourcesRoute: ResourcesRoute,
+  AuthForgotPasswordRoute: AuthForgotPasswordRoute,
+  AuthLoginRoute: AuthLoginRoute,
+  AuthResetPasswordRoute: AuthResetPasswordRoute,
+  AuthSignupRoute: AuthSignupRoute,
+  AuthVerifyEmailRoute: AuthVerifyEmailRoute,
+  OnboardingLeadsRoute: OnboardingLeadsRoute,
+  OnboardingPhoneRoute: OnboardingPhoneRoute,
+  OnboardingReadyRoute: OnboardingReadyRoute,
+  OnboardingWorkspaceRoute: OnboardingWorkspaceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

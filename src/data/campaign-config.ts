@@ -146,7 +146,7 @@ export const timezoneOptions = [
   "America/New_York (UTC−05:00)",
 ];
 
-const dayOrder = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+export const dayOrder: string[] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 const sixDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -349,6 +349,16 @@ export function describeConfigValue(
   }
   if (v === "") return field.control.kind === "datetime" ? "Not scheduled" : "—";
   return v;
+}
+
+export function describeField(field: ConfigField, config: Record<string, ConfigValue>): string {
+  const v = config[field.id];
+  if (field.control.kind === "select" && v === "Custom") {
+    const custom = config[`${field.id}Custom`];
+    if (custom === undefined || custom === "") return "Custom";
+    return `${custom}${field.control.suffix ? ` ${field.control.suffix}` : ""}`;
+  }
+  return describeConfigValue(field, v);
 }
 
 export function retryWaitDisplay(rule: RetryRule): string {
